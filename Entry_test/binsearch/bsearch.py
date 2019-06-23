@@ -43,37 +43,39 @@ def Test_bsearch(lst,value):
     except EmptyListException as ele:
         print(ele);    
 
-# empty list
-lst = [];
-value = 3;
-Test_bsearch(lst, value);
+if "__main__" == __name__:
+    g
+    # empty list
+    lst = [];
+    value = 3;
+    Test_bsearch(lst, value);
 
-# 1 value
-lst = [3];
-value = 3;
-Test_bsearch(lst, value);
+    # 1 value
+    lst = [3];
+    value = 3;
+    Test_bsearch(lst, value);
 
-# general case
-lst = [1,2,3,4,5,6];
-value = 3;
-Test_bsearch(lst, value);
+    # general case
+    lst = [1,2,3,4,5,6];
+    value = 3;
+    Test_bsearch(lst, value);
 
-# Boundary case - minimum
-lst = [1,2,3,4,5,6];
-value = 1;
-Test_bsearch(lst, value);
+    # Boundary case - minimum
+    lst = [1,2,3,4,5,6];
+    value = 1;
+    Test_bsearch(lst, value);
 
-# Boundary case - maximum
-lst = [1,2,3,4,5,6];
-value = 6;
-Test_bsearch(lst, value);
+    # Boundary case - maximum
+    lst = [1,2,3,4,5,6];
+    value = 6;
+    Test_bsearch(lst, value);
 
-# value is not in the list
-lst = [2,4,6,8,10,12];
-value = 3;
-Test_bsearch(lst, value);
-value = 1;
-Test_bsearch(lst, value);
-value = 13;
-Test_bsearch(lst, value);
+    # value is not in the list
+    lst = [2,4,6,8,10,12];
+    value = 3;
+    Test_bsearch(lst, value);
+    value = 1;
+    Test_bsearch(lst, value);
+    value = 13;
+    Test_bsearch(lst, value);
 

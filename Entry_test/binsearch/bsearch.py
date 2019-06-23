@@ -7,7 +7,7 @@ def bsearch(lst, value):
         res = bsearch(lst[:mid],value);
     elif value > lst[mid]:
         res = bsearch(lst[mid+1:],value);
-        res += len(lst[:mid+1]);
+        res += mid+1;
     else:
         res = mid;
     return res;

@@ -4,19 +4,25 @@ class EmptyListException(Exception):
 #optimized version
 def bsearch(lst, value):
     print("list: ", lst);
+    found = False;
     l = len(lst);
-    mid = int(l/2);
-    while mid < l:
-        print("length: ", l, "middle: ", mid);
+    if 0 == l:
+        raise EmptyListException("List is empty.");
+    beg = 0; 
+    end = l - 1;
+    while beg <= end:
+        mid = int( (beg + end) / 2);
         if value < lst[mid]:
-            l = mid;#res = bsearch(lst[:mid],value);
-            mid = int(l / 2);
+            end = mid - 1;
+            res = beg;
         elif value > lst[mid]:
-            mid = mid + int( (l - mid ) / 2);
+            beg = mid + 1;
+            res = end + 1;
         else:
+            found = True;
             res = mid;
             break;
-    return res
+    return found, res;
 
 ##########################################################################################################
 #recursive version. Not the best one

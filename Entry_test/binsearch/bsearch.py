@@ -1,8 +1,26 @@
 class EmptyListException(Exception):
     pass
 
-#recursive version. Not the best one
+#optimized version
 def bsearch(lst, value):
+    print("list: ", lst);
+    l = len(lst);
+    mid = int(l/2);
+    while mid < l:
+        print("length: ", l, "middle: ", mid);
+        if value < lst[mid]:
+            l = mid;#res = bsearch(lst[:mid],value);
+            mid = int(l / 2);
+        elif value > lst[mid]:
+            mid = mid + int( (l - mid ) / 2);
+        else:
+            res = mid;
+            break;
+    return res
+
+##########################################################################################################
+#recursive version. Not the best one
+def bsearch_rcrsve(lst, value):
     #print("list: ", lst);
     l = len(lst);
     if 0 == l:

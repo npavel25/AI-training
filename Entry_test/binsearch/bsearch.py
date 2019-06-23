@@ -3,12 +3,12 @@ class EmptyListException(Exception):
 
 #recursive version. Not the best one
 def bsearch(lst, value):
-    print("list: ", lst);
+    #print("list: ", lst);
     l = len(lst);
     if 0 == l:
         raise EmptyListException(str(value) + " is not in the list.");
     mid = int(l / 2)
-    print("length: ", l, "middle: ", mid);
+    #print("length: ", l, "middle: ", mid);
     if value < lst[mid]:
         res = bsearch(lst[:mid],value);
     elif value > lst[mid]:
@@ -17,18 +17,45 @@ def bsearch(lst, value):
     else:
         res = mid;
     return res;
-    
-try:
-    lst = [1,2,3,4,5,6];
-    res = bsearch(lst,3);
-    print("bsearch: ", res);
-except Exception as e:
-    print(e);
-try:    
-    lst = [2,4,6,8,10,12];
-    res = bsearch(lst,3);
-    print("bsearch: ", res);
-except Exception as e:
-    print(e);
-        
+
+def Test_bsearch(lst,value):
+    try:
+        res = bsearch(lst,value);
+        print("bsearch:", value, "found in position", res, "in the list", lst);
+    except EmptyListException as ele:
+        print(ele);    
+
+# empty list
+lst = [];
+value = 3;
+Test_bsearch(lst, value);
+
+# 1 value
+lst = [3];
+value = 3;
+Test_bsearch(lst, value);
+
+# general case
+lst = [1,2,3,4,5,6];
+value = 3;
+Test_bsearch(lst, value);
+
+# Boundary case - minimum
+lst = [1,2,3,4,5,6];
+value = 1;
+Test_bsearch(lst, value);
+
+# Boundary case - maximum
+lst = [1,2,3,4,5,6];
+value = 6;
+Test_bsearch(lst, value);
+
+# value is not in the list
+lst = [2,4,6,8,10,12];
+value = 3;
+Test_bsearch(lst, value);
+value = 1;
+Test_bsearch(lst, value);
+value = 13;
+Test_bsearch(lst, value);
 

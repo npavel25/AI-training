@@ -44,8 +44,11 @@ def bsearch_rcrsve(lst, value):
 
 def Test_bsearch(lst,value):
     try:
-        res = bsearch(lst,value);
-        print("bsearch:", value, "found in position", res, "in the list", lst);
+        found, res = bsearch(lst,value);
+        if found:
+            print("bsearch:", value, "found in position", res, "in the list", lst);
+        else:
+            print("bsearch:", value, "is not in the list", lst, "but it could be inserted in position: ", res);
     except EmptyListException as ele:
         print(ele);    
 

@@ -6,7 +6,7 @@ class Real:
         if 0 == len(self.__lst__):
             self.__lst__.append(value);
         else:
-            ind = bsearch(self.__lst__, value);
+            found, ind = bsearch(self.__lst__, value);
             self.__lst__.insert(ind,value);
         
     def getByIndex(self, ind):
@@ -17,8 +17,11 @@ class Real:
             
     def getByValue(self, val):
         if len(self.__lst__) != 0:
-            ind = bsearch(self.__lst__, value);
-            return self.__lst__.pop(ind);
+            found, ind = bsearch(self.__lst__, value);
+            if found:
+                return self.__lst__.pop(ind);
+            else:
+                raise EmptyListException(str(val) + "is not in the list.");
         else:
             raise EmptyListException("List is empty!");
         

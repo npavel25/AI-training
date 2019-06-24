@@ -44,7 +44,7 @@ class RealContainer:
             
     def getByValue(self, val):
         if len(self.__lst__) != 0:
-            found, ind = bsearch(self.__lst__, value);
+            found, ind = bsearch(self.__lst__, val);
             if found:
                 return self.__lst__.pop(ind);
             else:

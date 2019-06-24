@@ -11,7 +11,7 @@ def bsearch(lst, value):
     beg = 0; 
     end = l - 1;
     while beg <= end:
-        mid = int( (beg + end) / 2);
+        mid = int( beg + (end - beg) / 2);
         if value < lst[mid]:
             end = mid - 1;
             res = beg;

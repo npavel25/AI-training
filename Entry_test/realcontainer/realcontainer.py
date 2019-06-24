@@ -87,3 +87,13 @@ if __name__ == "__main__":
     except EmptyListException as ele:
         print(ele);
         
+    try:
+        c = RealContainer();
+        c.insert(2.0);
+        c.insert(1.0);
+        c.insert(0.0);
+        c.print();
+        print("By index:", c.getByIndex(1));
+        print("By Value", c.getByValue(2.0));
+    except EmptyListException as ele:
+        print(ele);    

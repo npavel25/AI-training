@@ -50,7 +50,7 @@ def Test_bsearch(lst,value):
         print(ele);    
 
 if "__main__" == __name__:
-    g
+
     # empty list
     lst = [];
     value = 3;
